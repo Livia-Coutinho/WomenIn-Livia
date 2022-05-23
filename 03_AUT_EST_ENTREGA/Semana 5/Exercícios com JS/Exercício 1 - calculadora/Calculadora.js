@@ -42,4 +42,4 @@ function divisãoResto() {
     numero2 = document.getElementById("numero2").value
     resultado = number(numero1) % number(numero2)
     document.getElementById("resultado").value = resultado
-}s
+}
