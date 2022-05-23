@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cédulas</title>
+    <style type="text/css">
+        body {
+            background-color: #00539F;
+          }
+        </style>
+</head>
+<body>
+    <h1>Caixa eletrônico - cédulas</h1>
+    <form name="form.one" action="cédulas.html" method="get">
+        <label for="valor">Insira o preço do produto</label>
+        <input type="number" step="1" name="quantia" id="quantia">
+        <input type="button" name="botão" onclick="caixa()" value="Calcule">
+    </form>    
+    <div id="saída"></div>
+    <script src="Cédulas.js"></script>
+</body>
+</html>
