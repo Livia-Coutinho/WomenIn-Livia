@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h2>Cadastro de Aluno</h2>
+    <p>Nome do Aluno</p>
+    <input id="name" style="size:fit-content; border: 2;" type="text"></input>
+    <p>Nota</p>
+    <input id="nota" style="size:fit-content; border: 2;" type="text">prova</input>
+    <p></p>
+    <input id="nota2" style="size:fit-content; border: 2;" type="text">trabalho</input>
+    <p></p>
+    <button type="button" onclick="grava()">Gravar Aluno</button>
+    <h2>Ver nota de Aluno</h2>
+    <input id="nome" style="size:fit-content; border: 2;" type="text"></input>
+    <button type="button" onclick="aluno()">Ver Nota (prova,trabalho)</button>
+    <button type="button" onclick="mediaAluno()">Ver Media</button>
+    <p id="notaAluno"></p>
+    <button type="button" onclick="Media()">Ver Media Geral</button>
+    <h2></h2>
+</body>
+<script>
+    let lista = []
+    function grava() {
+        let name = String(document.getElementById("name").value);
+        let prova = Number(document.getElementById("nota").value)
+        let trabalho = Number(document.getElementById("nota2").value)
+        let nota = [prova, trabalho];
+        lista[name] = nota
+        console.log(lista);
+    }
+    function aluno() {
+        let name = String(document.getElementById("nome").value);
+        document.getElementById("notaAluno").innerHTML = lista[name];
+    }
+    function mediaAluno() {
+        let name = String(document.getElementById("nome").value);
+        let notas = [];
+        notas = lista[name];
+        let media = Number((Number(notas[0]) * 2 + Number(notas[1]) * 3) / 5)
+        document.getElementById("notaAluno").innerHTML = media
+        console.log(notas);
+    }
+    function Media() {
+        let medias = []
+        for (let i = 0; i < lista.length; i++) {
+            let notas = lista[i];
+            let media = Number((Number(notas[0]) * 2 + Number(notas[1]) * 3) / 5);
+            medias.push(media);
+            console.log("kjd")
+        }
+        console.log(medias)
+
+    }
+</script>
+
+</html>
