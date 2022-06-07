@@ -22,6 +22,20 @@
     --> Se vôo diurno, 200 por pessoa. Se mais do que 50 pessoas, desconto de 40% por pessoa. <br>
     --> Se vôo noturno, 100 por pessoa. Se mais do que 50 pessoas, desconto de 20% por pessoa.</p>
 
+        <p>Informe abaixo a quantidade de pessoas: <br> 
+           <input type="number" id="passageiros"></p>
+
+        <p>Selecione abaixo qual o período:<br>
+            <input type="radio" name="turno" id="diurno" checked>
+            <label for="diurno">Diurno</label>
+            <input type="radio" name="turno" id="noturno">
+            <label for="noturno">Noturno</label>
+        </p>
+
+        <p><button onclick="calculus()">Clique para calcular</button></p>
+        <p id="calcular"></p>
+
+        <script src="Vôos.js"></script>
     
 </body>
 </html>
