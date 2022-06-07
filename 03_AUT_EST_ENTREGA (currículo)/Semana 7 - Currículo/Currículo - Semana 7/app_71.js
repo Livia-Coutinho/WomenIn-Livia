@@ -26,7 +26,7 @@ app.get('/users', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
     var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = 'SELECT Id,Língua,Proeficiência FROM Idiomas ORDER BY id COLLATE NOCASE';
+	var sql = 'SELECT id,lingua,nivel FROM idiomas ORDER BY id COLLATE NOCASE';
     db.all(sql, [],  (err, rows ) => {
         if (err) {
             throw err;
@@ -41,7 +41,7 @@ app.post('/userinsert', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 	console.log(req.body);
-    sql = `INSERT INTO tbUser (title, id, completed) VALUES ("${req.body.title}", ${parseInt(req.body.id)}, ${req.body.completed})`;
+    sql = `INSERT INTO idiomas (lingua,nivel) VALUES ("${req.body.lingua}", "${req.body.nivel}")`;
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
@@ -57,7 +57,7 @@ app.post('/userupdate', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-    sql = "UPDATE tbUser SET title = '" + req.body.title + "' WHERE userId = " + req.body.userId;
+    sql = "UPDATE idiomas SET nivel = '" + req.body.nivel + "' WHERE id = " + req.body.id;
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
@@ -73,7 +73,7 @@ app.post('/userdelete', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-    sql = "DELETE FROM tbUser WHERE userId = " + req.body.userId;
+    sql = "DELETE FROM idiomas WHERE id = " + req.body.id;
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [],  err => {
         if (err) {
