@@ -1,31 +1,31 @@
 function calculus() {
-  var periodo = document.getElementByName("turno");
+  var periodo = document.getElementById("turno");
   var total;
+  console.log(periodo)
 
-  if (periodo[0].checked) {
-    var nPassageiros = parseInt(document.querySelector("#passageiros").value);
+  if (document.getElementById("dia").checked){
+    var nPassageiros = parseInt(document.getElementById("passageiros").value);
+    console.log(nPassageiros)
     if (nPassageiros > 50) {
-      total = nPassageiros * 120;
-      document.querySelector("#calcular").innerHTML =
-        "O valor total é R$${total}.";
+    total = nPassageiros * 120;
+    console.log(total)
+    document.getElementById("calcular").innerHTML = total;
     }
     else {
       total = nPassageiros * 200;
-      document.querySelector("#calcular").innerHTML =
-        "O valor total é R$${total}";
+      console.log(total)
+      document.getElementById("calcular").innerHTML = total;
     }
   } 
   
-    else if (periodo[1].checked) {
+    else if (document.getElementById("noite").checked) {
     var nPassageiros = parseInt(document.querySelector("#passageiros").value);
     if (nPassageiros > 50) {
       total = nPassageiros * 80;
-      document.querySelector("#calcular").innerHTML =
-        "O valor total é R$${total}";
+      document.getElementById("calcular").innerHTML = total;
     } else {
       total = nPassageiros * 100;
-      document.querySelector("#calcular").innerHTML =
-        "O valor total é R$${total}";
+      document.getElementById("calcular").innerHTML = total;
     }
   }
 }
