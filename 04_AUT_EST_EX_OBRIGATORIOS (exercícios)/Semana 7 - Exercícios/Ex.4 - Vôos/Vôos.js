@@ -5,10 +5,11 @@ function calculus() {
   if (periodo[0].checked) {
     var nPassageiros = parseInt(document.querySelector("#passageiros").value);
     if (nPassageiros > 50) {
-      total = numPessoas * 120;
+      total = nPassageiros * 120;
       document.querySelector("#calcular").innerHTML =
         "O valor total é R$${total}.";
-    } else {
+    }
+    else {
       total = nPassageiros * 200;
       document.querySelector("#calcular").innerHTML =
         "O valor total é R$${total}";
